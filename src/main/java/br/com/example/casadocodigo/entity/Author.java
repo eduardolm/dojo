@@ -1,6 +1,7 @@
 package br.com.example.casadocodigo.entity;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 public class Author {
@@ -18,6 +19,9 @@ public class Author {
     @Column(nullable = false)
     private String description;
 
+    @Column(nullable = false)
+    private LocalDateTime createdAt;
+
     @Deprecated
     public Author(){ }
 
@@ -25,6 +29,7 @@ public class Author {
         this.name = name;
         this.email = email;
         this.description = description;
+        this.createdAt = LocalDateTime.now();
     }
 
     public long getId() {
@@ -41,5 +46,9 @@ public class Author {
 
     public String getDescription() {
         return description;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
 }
