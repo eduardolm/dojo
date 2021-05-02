@@ -23,7 +23,7 @@ public class AuthorDto {
     @Max(400)
     private String description;
 
-    private Author toModel(){
+    public Author toModel(){
         return new Author(name,email,description);
     }
 }
