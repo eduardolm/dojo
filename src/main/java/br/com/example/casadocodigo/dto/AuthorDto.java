@@ -1,5 +1,7 @@
 package br.com.example.casadocodigo.dto;
 
+import br.com.example.casadocodigo.entity.Author;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
@@ -21,5 +23,7 @@ public class AuthorDto {
     @Max(400)
     private String description;
 
-//    private
+    private Author toModel(){
+        return new Author(name,email,description);
+    }
 }
